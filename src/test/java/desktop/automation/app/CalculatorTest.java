@@ -12,7 +12,7 @@ public abstract class CalculatorTest
     Calculator calculator;
 
     @BeforeTest
-    public void openCalculator()
+    public void openCalculator() throws Exception
     {
         calculator = new Calculator();
         calculator.openApplication();

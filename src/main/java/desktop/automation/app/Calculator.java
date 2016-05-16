@@ -28,7 +28,32 @@ public class Calculator extends Application
         clickNumber(b);
         add();
     }
-
+    
+    public void multiply(int a, int b) throws NotNumberException
+    {
+        clickNumber(a);
+        multiply();
+        clickNumber(b);
+        multiply();
+    }
+    
+    
+    public void divide(int a, int b) throws NotNumberException
+    {
+    	clickNumber(a);
+    	divide();
+        clickNumber(b);
+        divide();
+    }
+    
+    
+    /**
+     * Just click on the </> button
+     */
+    public void divide()
+    {
+        clickButton("Divide");
+    }   
     /**
      * Just click on the <+> button
      */
@@ -37,6 +62,14 @@ public class Calculator extends Application
         clickButton("Add");
     }
 
+    /**
+     * Just click on the <*> button
+     */
+    public void multiply()
+    {
+        clickButton("Multiply");
+    }
+    
     /**
      * Clear the Result value, clicking on C button
      */
@@ -66,5 +99,7 @@ public class Calculator extends Application
             throw new NotNumberException(number);
         }
         getLdtp().click(String.valueOf(number));
+        
+        
     }
 }
