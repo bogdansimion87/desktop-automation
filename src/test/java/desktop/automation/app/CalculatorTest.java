@@ -20,13 +20,14 @@ public abstract class CalculatorTest
 
     @AfterTest
     public void closeCalculator()
-    {
-        calculator.closeWindow();
+    { 
+        calculator.closeWindow();       
     }
 
     @BeforeMethod
     public void clearResults()
     {
         calculator.clear();
+        
     }
 }

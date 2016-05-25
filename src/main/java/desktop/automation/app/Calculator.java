@@ -6,7 +6,7 @@ import org.alfresco.os.win.Application;
 import org.alfresco.utilities.LdtpUtils;
 
 import desktop.automation.exception.NotNumberException;
-
+ 
 /**
  * Calculator wrapper
  * 
@@ -46,6 +46,11 @@ public class Calculator extends Application
         divide();
     }
     
+    public void logarithm(int a) throws NotNumberException{
+    	selectScientificView();
+    	clickNumbers(a);
+    	logarithm();
+    }
     
     /**
      * Just click on the </> button
@@ -70,6 +75,11 @@ public class Calculator extends Application
         clickButton("Multiply");
     }
     
+    
+    public void logarithm()
+    {
+        clickButton("Log");
+    }
     /**
      * Clear the Result value, clicking on C button
      */
@@ -102,4 +112,25 @@ public class Calculator extends Application
         
         
     }
+    
+   
+    private void clickNumbers(int number) throws NotNumberException {
+    	String number_string = String.valueOf(number);    	
+    	for (char c : number_string.toCharArray()) {
+    		getLdtp().click(String.valueOf(c));
+    	}
+    }
+    
+    public void selectScientificView() {
+    	clickOnViewMenu();
+    	getLdtp().waitTime(2);
+    	getLdtp().selectMenuItem("Scientific");
+    	//getLdtp().generateKeyEvent("<alt>+2");
+    }
+    
+    public void clickOnViewMenu() {
+    	getLdtp().doubleClick("View");
+    }
+
+
 }

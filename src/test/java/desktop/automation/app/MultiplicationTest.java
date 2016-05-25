@@ -12,5 +12,16 @@ public class MultiplicationTest extends CalculatorTest{
         calculator.multiply(5, 3);
         Assert.assertEquals("15", calculator.getResult());
     }
-
+	@Test
+    public void testMultipleMultiplication() throws NotNumberException
+    {
+        calculator.multiply(2, 2);
+        calculator.multiply(2, 2);
+        Assert.assertEquals("16", calculator.getResult());
+    }
+	@Test(expectedExceptions = NotNumberException.class)
+    public void testNotANumberException() throws NotNumberException
+    {
+        calculator.multiply(21, 3);
+    }
 }
