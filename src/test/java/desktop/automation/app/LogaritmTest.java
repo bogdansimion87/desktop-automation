@@ -5,11 +5,11 @@ import org.testng.annotations.Test;
 import desktop.automation.exception.NotNumberException;
 import junit.framework.Assert;
 
-public class LogaritmTest extends CalculatorTest{
+public class LogaritmTest extends ScientificCalculatorTest{
   @Test
   public void testLogOfOneThousand() throws NotNumberException
   {
-      calculator.logarithm(1000);
-      Assert.assertEquals("3", calculator.getResult());
+	  ScientificCalculator.logarithm(1000);
+      Assert.assertEquals("3", ScientificCalculator.getResult());
   }
 }

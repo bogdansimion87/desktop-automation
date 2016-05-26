@@ -1,16 +1,25 @@
 package desktop.automation.app;
-import java.lang.Math;
-public class ScientificCalculator extends Calculator
-{
-	  public ScientificCalculator() {
-		  
-               super();
-      }
-	  
-	  public void calculateSinus(double[] numbers)
-	    {
-	    	for (int i=0; i<numbers.length+1;i++)
-	    		
-	    		System.out.println(Math.sin(numbers[i]));
-	    }
+
+import desktop.automation.exception.NotNumberException;
+
+public class ScientificCalculator extends Calculator {
+	
+
+	public ScientificCalculator() {
+		super();
+		selectScientificView();
+	}
+
+	public void selectScientificView() {
+		clickOnViewMenu();
+		getLdtp().waitTime(2);
+		getLdtp().selectMenuItem("Scientific");
+		// or: getLdtp().generateKeyEvent("<alt>+2");
+	}
+
+	public void logarithm(int a) throws NotNumberException {
+		selectScientificView();
+		clickNumbers(a);
+		logarithm();
+	}
 }
