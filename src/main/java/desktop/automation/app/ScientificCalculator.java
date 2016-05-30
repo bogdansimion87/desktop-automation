@@ -5,8 +5,9 @@ import desktop.automation.exception.NotNumberException;
 public class ScientificCalculator extends Calculator {
 	
 
-	public ScientificCalculator() {
+	public ScientificCalculator() throws Exception {
 		super();
+		super.openApplication();
 		selectScientificView();
 	}
 
@@ -17,6 +18,9 @@ public class ScientificCalculator extends Calculator {
 		// or: getLdtp().generateKeyEvent("<alt>+2");
 	}
 
+	
+	
+	
 	public void logarithm(int a) throws NotNumberException {
 		selectScientificView();
 		clickNumbers(a);

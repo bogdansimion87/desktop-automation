@@ -9,7 +9,7 @@ public class LogaritmTest extends ScientificCalculatorTest{
   @Test
   public void testLogOfOneThousand() throws NotNumberException
   {
-	  ScientificCalculator.logarithm(1000);
-      Assert.assertEquals("3", ScientificCalculator.getResult());
+	  scientificCalculator.logarithm(1000);
+      Assert.assertEquals("3", scientificCalculator.getResult());
   }
 }
