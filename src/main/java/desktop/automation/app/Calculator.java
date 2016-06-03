@@ -17,6 +17,7 @@ public class Calculator extends Application {
 		setApplicationName("calc.exe");
 		setApplicationPath(new File(LdtpUtils.getSystem32(), getApplicationName()).getPath());
 		setWaitWindow("Calculator");
+
 	}
 
 	public void add(int a, int b) throws NotNumberException {
