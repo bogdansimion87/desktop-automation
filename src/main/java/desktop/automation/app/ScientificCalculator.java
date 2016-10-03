@@ -25,5 +25,6 @@ public class ScientificCalculator extends Calculator {
 		selectScientificView();
 		clickNumbers(a);
 		logarithm();
+		//testing
 	}
 }
