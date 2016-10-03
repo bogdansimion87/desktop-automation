@@ -11,5 +11,6 @@ public class LogaritmTest extends ScientificCalculatorTest{
   {
 	  scientificCalculator.logarithm(1000);
       Assert.assertEquals("3", scientificCalculator.getResult());
+      //comment
   }
 }
